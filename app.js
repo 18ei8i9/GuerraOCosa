@@ -76,6 +76,7 @@ function agregaJugador(){
 function terminaCarga(){
     eleccion.loop=true;
     eleccion.play();
+    
     document.getElementById('nombre').style.display="none";
     document.getElementById('agregar').style.display="none";
     document.getElementById('terminar').style.display="none";
@@ -129,6 +130,7 @@ function continuar(){
         eleccion.loop=true;
         eleccion.play();
         acierto.pause();
+        acierto.currentTime=0;
         document.getElementById("h3").innerHTML=" ";
         document.getElementById('continuar').style.display="none";
         asignarTextoElemento('p',`jugador ${jugadores[turno]} elije una opcion`);
@@ -148,6 +150,7 @@ function continuar(){
         eleccion.loop=true;
         eleccion.play();
         acierto.pause();
+        acierto.currentTime=0;
         document.getElementById("h3").innerHTML=" ";
         document.getElementById('par').style.backgroundImage = `url(./img/${carta[0]}PAR.png)`;
         document.getElementById('impar').style.backgroundImage = `url(./img/${carta[0]}IMPAR.png)`;
@@ -160,6 +163,7 @@ function continuar(){
         eleccion.loop=true;
         eleccion.play();
         acierto.pause();
+        acierto.currentTime=0;
         document.getElementById("h3").innerHTML=" ";
         document.getElementById('alta').style.backgroundImage = `url(./img/${carta[0]+valorguia}ALTA.png)`;
         document.getElementById('baja').style.backgroundImage = `url(./img/${carta[0]}${valorguia}BAJA.png)`;
@@ -172,7 +176,7 @@ function continuar(){
         eleccion.loop=true;
         eleccion.play();
         acierto.pause();
-        
+        acierto.currentTime=0;
         asignarTextoElemento('p',`jugador ${jugadores[turno]} elije una opcion`);
         document.getElementById('continuar').style.display="none";
         if(tienenValoresIguales(carta, par) & tienenValoresIguales(carta, baja)){
@@ -244,6 +248,7 @@ function compararConArrayAnterior(arrayActual) {
                 acierto.loop=true;
                 eleccion.pause();
                 acierto.play();
+                eleccion.currentTime=0;
 
         
                 for(i=0;i<ganadores.length;i++){
@@ -328,6 +333,7 @@ function compararConValor (valorPalo){
                 acierto.loop=true;
                 eleccion.pause();
                 acierto.play();
+                eleccion.currentTime=0;
                 document.getElementById('continuar').style.display="block";
                 asignarTextoElemento('p',`ADIVINARON Y PASAN DE RONDA`);
                 jugadores=ganadores;
