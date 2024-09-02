@@ -177,6 +177,7 @@ function continuar(){
         document.getElementById('continuar').style.display="none";
         document.getElementById('alta').style.display="block";
         document.getElementById('baja').style.display="block";
+        
     }else if(fase==5){
         document.getElementById("h3").innerHTML=" ";
         eleccion.loop=true;

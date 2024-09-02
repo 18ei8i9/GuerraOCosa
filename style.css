@@ -38,7 +38,7 @@ body {
 
 .container__boton__arriba {
    
-   color: #1875E8;
+   color:white;
     height: 50%;
     width: 100%;
     font-size: 3em;
@@ -53,7 +53,7 @@ body {
 
 .container__boton__abajo {
    
-    color: #1875E8;
+    color: white;
     height: 50%;
     width: 100%;
     font-size: 3em;
@@ -68,7 +68,7 @@ body {
 
 .container__boton__1{
    
-    color: #1875E8;
+    color: white;
     height: 30%;
     width: 100%;
     font-size: 3em;
@@ -82,7 +82,7 @@ body {
 
 .container__boton__2{
    
-    color: #1875E8;
+    color: white;
     height: 30%;
     width: 100%;
     font-size: 3em;
@@ -95,7 +95,7 @@ body {
 }
 .container__boton__3{
    
-    color: #1875E8;
+    color: white;
     height: 30%;
     width: 100%;
     font-size: 3em;
@@ -129,11 +129,12 @@ img{
     border-radius: 16px;
     background-color: #FFF;
     border: none;
-    color: #1875E8;
+    color: black;
     text-align: center;
     font-size: 3em;
     font-weight: 700;
     font-family: 'Banger' , Banger ;
+    
 }
 
 .container__botones {
