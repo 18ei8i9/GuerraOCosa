@@ -18,6 +18,8 @@ let ganadores=[];
 let valorguia=""
 let eleccion = new Audio("./audio/inicio.mp3");
 let acierto = new Audio("./audio/acertado.mp3");
+let ganaste = new Audio("./audio/ganaste.mp3");
+let perdiste = new Audio("./audio/perdiste.mp3");
 // para los mensajes del juego
 function asignarTextoElemento(elemento, texto) {
     let elementoHTML = document.querySelector(elemento);
@@ -76,6 +78,10 @@ function agregaJugador(){
 function terminaCarga(){
     eleccion.loop=true;
     eleccion.play();
+    perdiste.pause();
+    perdiste.currentTime=0;
+    ganaste.pause();
+    ganaste.currentTime=0;
     
     document.getElementById('nombre').style.display="none";
     document.getElementById('agregar').style.display="none";
@@ -267,6 +273,10 @@ function compararConArrayAnterior(arrayActual) {
 
                     document.getElementById("h3").innerHTML +=  carta[i] + " " ;
                 }
+                perdiste.loop=true;
+                perdiste.play();
+                eleccion.pause();
+                eleccion.currentTime=0;
                 document.getElementById('reiniciar').style.display="block";
                 asignarTextoElemento('p',`NO ADIVINO NADIE`);
                 document.getElementById('jugar').style.display="block";
@@ -321,6 +331,10 @@ function compararConValor (valorPalo){
                document.getElementById("h3").innerHTML +=  ganadores[i] + " / " ;
             }
             if(fase==5){
+               ganaste.loop=true;
+               ganaste.play();
+               eleccion.pause();
+               eleccion.currentTime=0;
                asignarTextoElemento('p',`DALE CAMPEÓN, DALE CAMPEÓN!!!`);
                document.getElementById('reiniciar').style.display="block";
                document.getElementById('jugar').style.display="block";
@@ -344,10 +358,15 @@ function compararConValor (valorPalo){
             }
         }
         else{
+
             for(i=0;i<carta.length;i++){
 
                 document.getElementById("h3").innerHTML +=  carta[i]+ "  " ;
             }
+            perdiste.loop=true;
+            perdiste.play();
+            eleccion.pause();
+            eleccion.currentTime=0;
             document.getElementById('reiniciar').style.display="block";
             asignarTextoElemento('p',`NO ADIVINO NADIE`);
             document.getElementById('jugar').style.display="block";
