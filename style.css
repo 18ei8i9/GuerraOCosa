@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-shadow: -1px 0px 0px #000 , 0px 1px 0px #000, 1px 0px 0px #000, 0px -1px 0px #000 ;
+}
+
+@font-face { font-family: Banger; src: url('./fonts/Banger.ttf'); }
+
+body {
+    background: #1354A5;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    }
+
+
+.container__contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.container__boton__arriba {
+   
+   color: #1875E8;
+    height: 50%;
+    width: 100%;
+    font-size: 3em;
+    font-weight: 700;
+    background-image: url("./img/COSA.png");
+    background:round; 
+    background-repeat:no-repeat;
+    background-size: contain;
+    background-position: center;
+    
+}
+
+.container__boton__abajo {
+   
+    color: #1875E8;
+    height: 50%;
+    width: 100%;
+    font-size: 3em;
+    font-weight: 700;
+    background-image: url("./img/COSA.png");
+    background:round; 
+    background-repeat:no-repeat;
+    background-size: contain;    
+    background-position: center;
+}
+
+
+.container__boton__1{
+   
+    color: #1875E8;
+    height: 30%;
+    width: 100%;
+    font-size: 3em;
+    font-weight: 700;
+    background-image: url("./img/COSA.png");
+    background:round; 
+    background-repeat:no-repeat;
+    background-size: contain;    
+    background-position: center;
+}
+
+.container__boton__2{
+   
+    color: #1875E8;
+    height: 30%;
+    width: 100%;
+    font-size: 3em;
+    font-weight: 700;
+    background-image: url("./img/COSA.png");
+    background:round; 
+    background-repeat:no-repeat;
+    background-size: contain;    
+    background-position: center;
+}
+.container__boton__3{
+   
+    color: #1875E8;
+    height: 30%;
+    width: 100%;
+    font-size: 3em;
+    font-weight: 700;
+    background-image: url("./img/COSA.png");
+    background:round; 
+    background-repeat:no-repeat;
+    background-size: contain;    
+    background-position: center;
+}
+
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.container__texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 15%;
+}
+
+
+.container__input {
+    width: 80%;
+    height: 72px;
+    border-radius: 16px;
+    background-color: #FFF;
+    border: none;
+    color: #1875E8;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 700;
+    font-family: 'Banger' , Banger ;
+}
+
+.container__botones {
+    display: flex;
+    width: 100%;
+    height: 85%;
+    gap: 1px;
+    flex-direction: column;
+}
+
+h3 {
+    font-family: 'Banger' , Banger ;
+    font-size: 42px;
+}
+
+p,
+button {
+    font-family: 'Banger' , Banger ;
+}
+
+.texto__parrafo {
+    font-size: 32px;
+    font-weight: 400;
+}
