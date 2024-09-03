@@ -65,6 +65,12 @@ function condicionesIniciales() {
 
 // funcion del boton para cargar los jugadores
 function agregaJugador(){
+    eleccion.loop=true;
+    eleccion.play();
+    perdiste.pause();
+    perdiste.currentTime=0;
+    ganaste.pause();
+    ganaste.currentTime=0;
     let nombre = document.getElementById("nombre").value;
     if(nombre !==""){
         jugadoresiniciales.push(nombre);
