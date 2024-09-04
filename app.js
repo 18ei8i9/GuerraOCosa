@@ -71,6 +71,9 @@ function agregaJugador(){
         document.getElementById('nombre').value = '';
         console.log(jugadoresiniciales);
         document.getElementById('terminar').style.display="block";
+        for(i=0;i<jugadoresiniciales.length;i++){
+               document.getElementById("h3").innerHTML +=  jugadoresiniciales[i] + " " ;
+        }
     }
 }
 
@@ -329,7 +332,7 @@ function compararConValor (valorPalo){
         document.getElementById("h3").innerHTML=" ";
         if(ganadores.length!=0){
             for(i=0;i<ganadores.length;i++){
-               document.getElementById("h3").innerHTML +=  ganadores[i] + " / " ;
+               document.getElementById("h3").innerHTML +=  ganadores[i] + " " ;
             }
             if(fase==5){
                ganaste.loop=true;
