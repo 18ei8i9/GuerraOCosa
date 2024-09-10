@@ -137,12 +137,10 @@ function compararValor(valor){
             document.getElementById('boton3').style.display="none";
             asignarTextoElemento('p',`${jugadores[turno]} elije una opcion`);
             if(carta[0]=="guerra"){
+                modBoton('btnarriba',"guerra");
                 
-                document.getElementById('espada').style.display="block";
-                document.getElementById('basto').style.display="block";
-                document.getElementById('espada').style.backgroundImage = `url(./img/ESPADA.png)`;
-                document.getElementById('basto').style.backgroundImage = `url(./img/BASTO.png)`;}
-            else if(tienenValoresIguales(cosa, carta)){
+            }
+            else{
                 
             document.getElementById('oro').style.display="block";
             document.getElementById('copa').style.display="block";
@@ -184,6 +182,16 @@ function compararValor(valor){
     }
 
 }
+
+function modBoton(boton,variable){
+    document.getElementById(`${boton}`).style.display='block';
+    document.getElementById(`${boton}`).textContent=`${variable}`;
+    document.getElementById(`${boton}`).value=`${variable}`;
+    document.getElementById(`${boton}`).style.backgroundImage=`.url/img/${variable}.png`;
+
+}
+
+
 
 //////////////////////////////////////ELECCION DE CARTA//////////////////////////////////////////////////
 function elegirValores(guerracosa, guerra, cosa, parimpar,alrabaja,parbaja,paralta,imparbaja,imparalta) {
