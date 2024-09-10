@@ -128,7 +128,26 @@ function compararValor(valor){
         console.log(carta);
     }
     if(value=="continuar"){
-        
+        eleccion.loop=true;
+        eleccion.play();
+        acierto.pause();
+        acierto.currentTime=0;
+        if(fase==2){
+            document.getElementById("h3").innerHTML=" ";
+            document.getElementById('boton3').style.display="none";
+            asignarTextoElemento('p',`${jugadores[turno]} elije una opcion`);
+            if(carta[0]=="guerra"){
+                
+                document.getElementById('espada').style.display="block";
+                document.getElementById('basto').style.display="block";
+                document.getElementById('espada').style.backgroundImage = `url(./img/ESPADA.png)`;
+                document.getElementById('basto').style.backgroundImage = `url(./img/BASTO.png)`;}
+            else if(tienenValoresIguales(cosa, carta)){
+                
+            document.getElementById('oro').style.display="block";
+            document.getElementById('copa').style.display="block";
+            document.getElementById('oro').style.backgroundImage = `url(./img/ORO.png)`;
+            document.getElementById('copa').style.backgroundImage = `url(./img/COPA.png)`;}    
 
 
         
@@ -151,14 +170,11 @@ function compararValor(valor){
                  eleccion.pause();
                  acierto.play();
                  eleccion.currentTime=0;
-                 document.getElementById('continuar').style.display="block";
-                 asignarTextoElemento('p',`ADIVINARON Y PASAN DE RONDA`);
+                 asignarTextoElemento('p',`ADIVINARON`);
                  jugadores=ganadores;
                  turno=0;
                  ganadores=[];
-                 elecciones=[];
-                 fase++;
-            
+                 fase++;        
             
                 
             }
@@ -217,11 +233,11 @@ function elegirValores(guerracosa, guerra, cosa, parimpar,alrabaja,parbaja,paral
 }
 //////////////////////////////////////ELECCION DE CARTA//////////////////////////////////////////////////
 
-
+/*
 function tienenValoresIguales(arr1, arr2) {
     return arr1.some(valor => arr2.includes(valor));
 }
-
+*/
 function buscaValor(array,valorBuscado){
     return array.includes(valorBuscado);
 }
@@ -318,7 +334,7 @@ function continuar(){
         }
     }
 }
-
+/*
 function compararConArrayAnterior(arrayActual) {
     
     elecciones[turno] = tienenValoresIguales(carta, arrayActual);
@@ -474,6 +490,6 @@ function compararConValor (valorPalo){
         asignarTextoElemento('p',`jugador ${jugadores[turno]} elije una opcion`);
     }
 }
-
+*/
 
 condicionesIniciales();
