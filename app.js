@@ -3,7 +3,7 @@ let fase = 0;
 let carta = []
 const numero=[1,2,3,4,5,6,7,8,9,10,11,12];
 const palo = ["ORO", "COPA","ESPADA", "BASTO"];
-const guerracosa = ["guerra", "cosa"];
+const guerracosa = ["GUERRA", "COSA"];
 const guerra = ["ESPADA", "BASTO"];
 const cosa = ["ORO", "COPA"];
 const parimpar = ["par","impar"];
@@ -84,11 +84,11 @@ function compararValor(valor){
         document.getElementById('btnarriba').style.display="block"; //este boton no se usa ahora
         document.getElementById('btnabajo').style.display="block";  //este boton no se usa ahora
         document.getElementById('btnarriba').textContent="GUERRA";     //asigno texto al boton
-        document.getElementById('btnarriba').value="guerra";           //asigno value al boton
+        document.getElementById('btnarriba').value="GUERRA";           //asigno value al boton
         document.getElementById('btnarriba').style.backgroundImage = `url(./img/GUERRA.png)`;
         document.getElementById('btnabajo').style.backgroundImage = `url(./img/COSA.png)`;
         document.getElementById('btnabajo').textContent="COSA";     //asigno texto al boton
-        document.getElementById('btnabajo').value="cosa";           //asigno value al boton
+        document.getElementById('btnabajo').value="COSA";           //asigno value al boton
         jugadores=jugadoresiniciales;
         fase=1;
         carta=elegirValores(guerracosa, guerra, cosa, parimpar,alrabaja,parbaja,paralta,imparbaja,imparalta);
@@ -107,14 +107,14 @@ function compararValor(valor){
             document.getElementById("h3").innerHTML=" ";
             document.getElementById('boton3').style.display="none";
             asignarTextoElemento('p',`${jugadores[turno]} elije una opcion`);
-            if(carta[0]=="guerra"){
-                modBoton('btnarriba',"espada");
-                modBoton('btnabajo',"basto");
+            if(carta[0]=="GUERRA"){
+                modBoton('btnarriba',"ESPADA");
+                modBoton('btnabajo',"BASTO");
                 
             }
             else{
-                modBoton('btnarriba',"oro");
-                modBoton('btnabajo',"copa");
+                modBoton('btnarriba',"ORO");
+                modBoton('btnabajo',"COPA");
             }
         }
     }
@@ -155,13 +155,14 @@ function compararValor(valor){
     }
 
     
-    }
+}
 
 function modBoton(boton,variable){
     document.getElementById(`${boton}`).style.display='block';
     document.getElementById(`${boton}`).textContent=`${variable}`;
     document.getElementById(`${boton}`).value=`${variable}`;
     document.getElementById(`${boton}`).style.backgroundImage=`.url/img/${variable}.png`;
+    console.log(document.getElementById(`${boton}`).style.backgroundImage=`.url/img/${variable}.png`);
 
 }
 
