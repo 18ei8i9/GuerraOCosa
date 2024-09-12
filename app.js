@@ -3,7 +3,7 @@ let fase = 0;
 let carta = []
 const numero=[1,2,3,4,5,6,7,8,9,10,11,12];
 const palo = ["ORO", "COPA","ESPADA", "BASTO"];
-const guerracosa = ["GUERRA", "COSA"];
+const guerracosa = ["guerra", "cosa"];
 const guerra = ["ESPADA", "BASTO"];
 const cosa = ["ORO", "COPA"];
 const parimpar = ["par","impar"];
@@ -47,38 +47,6 @@ function condicionesIniciales() {                              //primer pantalla
     document.getElementById('boton2').textContent="AGREGAR";     //asigno texto al boton
     document.getElementById('boton2').value="agregar";           //asigno value al boton
     
-
-
-    /*
-    document.getElementById('nombre').style.display="block";
-    document.getElementById('agregar').style.display="block";
-    document.getElementById('terminar').style.display="none";
-    document.getElementById('guerra').style.display="none";
-    document.getElementById('cosa').style.display="none";
-    document.getElementById('espada').style.display="none";
-    document.getElementById('basto').style.display="none";
-    document.getElementById('oro').style.display="none";
-    document.getElementById('copa').style.display="none";
-    document.getElementById('par').style.display="none";
-    document.getElementById('impar').style.display="none";
-    document.getElementById('alta').style.display="none";
-    document.getElementById('baja').style.display="none";
-    document.getElementById('1').style.display="none";
-    document.getElementById('2').style.display="none";
-    document.getElementById('3').style.display="none";
-    document.getElementById('4').style.display="none";
-    document.getElementById('5').style.display="none";
-    document.getElementById('6').style.display="none";
-    document.getElementById('7').style.display="none";
-    document.getElementById('8').style.display="none";
-    document.getElementById('9').style.display="none";
-    document.getElementById('10').style.display="none";
-    document.getElementById('11').style.display="none";
-    document.getElementById('12').style.display="none";
-    document.getElementById('continuar').style.display="none";
-    document.getElementById('reiniciar').style.display="none";
-    document.getElementById('jugar').style.display="none";
-    */
 }
 
 function compararValor(valor){
@@ -102,7 +70,7 @@ function compararValor(valor){
             document.getElementById("h3").innerHTML +=  jugadoresiniciales[i] + " " ;
         }        
     }
-    if(valor=="empezar"){
+    else if(valor=="empezar"){
         document.getElementById("nombre").style.display="none";
         document.getElementById("h3").innerHTML = " " ;
         eleccion.loop=true;
@@ -126,8 +94,11 @@ function compararValor(valor){
         carta=elegirValores(guerracosa, guerra, cosa, parimpar,alrabaja,parbaja,paralta,imparbaja,imparalta);
         asignarTextoElemento('p',`jugador ${jugadores[turno]} elije una opcion`)
         console.log(carta);
+        console.log(valor);
+        console.log(ganadores);
+        console.log(fase);
     }
-    if(value=="continuar"){
+    else if(valor=="continuar"){
         eleccion.loop=true;
         eleccion.play();
         acierto.pause();
@@ -137,22 +108,23 @@ function compararValor(valor){
             document.getElementById('boton3').style.display="none";
             asignarTextoElemento('p',`${jugadores[turno]} elije una opcion`);
             if(carta[0]=="guerra"){
-                modBoton('btnarriba',"guerra");
+                modBoton('btnarriba',"espada");
+                modBoton('btnabajo',"basto");
                 
             }
             else{
-                
-            document.getElementById('oro').style.display="block";
-            document.getElementById('copa').style.display="block";
-            document.getElementById('oro').style.backgroundImage = `url(./img/ORO.png)`;
-            document.getElementById('copa').style.backgroundImage = `url(./img/COPA.png)`;}    
-
-
-        
+                modBoton('btnarriba',"oro");
+                modBoton('btnabajo',"copa");
+            }
+        }
     }
-    else{
+    else {
+        console.log(valor);
+        console.log(ganadores);
+        console.log(fase);
+
         if(buscaValor(carta,valor)){
-            ganadores.push=jugadores[turno];
+            ganadores.push(jugadores[turno]);
         }
         if(turno==jugadores.length-1){
             document.getElementById('btnarriba').style.display="none";
@@ -172,16 +144,18 @@ function compararValor(valor){
                  jugadores=ganadores;
                  turno=0;
                  ganadores=[];
-                 fase++;        
-            
-                
-            }
+                 fase++; }
         }
-
+        console.log(valor);
+        console.log(ganadores);
+        console.log(fase);
+        turno++;
+        asignarTextoElemento('p',`jugador ${jugadores[turno]} elije una opcion`)
 
     }
 
-}
+    
+    }
 
 function modBoton(boton,variable){
     document.getElementById(`${boton}`).style.display='block';
