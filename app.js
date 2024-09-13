@@ -46,8 +46,20 @@ function condicionesIniciales() {                              //primer pantalla
     document.getElementById('boton2').style.display="block";     // este boton se activa
     document.getElementById('boton2').textContent="AGREGAR";     //asigno texto al boton
     document.getElementById('boton2').value="agregar";           //asigno value al boton
-    
 }
+//////////////////////////CAMBIA BOTONES///////////////////////////////////////////////////////////////
+    function modBoton(boton,variable){
+        document.getElementById(boton).style.display='block';
+        document.getElementById(boton).textContent=variable;
+        document.getElementById(boton).value=variable;
+        document.getElementById(boton).style.backgroundImage=`url(./img/${variable}.png)`;
+    
+    }
+//////////////////////////CAMBIA BOTONES///////////////////////////////////////////////////////////////
+
+    
+
+
 
 function compararValor(valor){
     if(valor=="agregar"){
@@ -98,7 +110,7 @@ function compararValor(valor){
         console.log(ganadores);
         console.log(fase);
     }
-    else if(valor=="continuar"){
+    if(valor=="continuar"){
         eleccion.loop=true;
         eleccion.play();
         acierto.pause();
@@ -107,10 +119,9 @@ function compararValor(valor){
             document.getElementById("h3").innerHTML=" ";
             document.getElementById('boton3').style.display="none";
             asignarTextoElemento('p',`${jugadores[turno]} elije una opcion`);
-            if(carta[0]=="GUERRA"){
+            if(carta[0]=="guerra"){
                 modBoton('btnarriba',"ESPADA");
                 modBoton('btnabajo',"BASTO");
-                
             }
             else{
                 modBoton('btnarriba',"ORO");
@@ -126,6 +137,8 @@ function compararValor(valor){
         if(buscaValor(carta,valor)){
             ganadores.push(jugadores[turno]);
         }
+        turno++;
+        asignarTextoElemento('p',`jugador ${jugadores[turno]} elije una opcion`);
         if(turno==jugadores.length-1){
             document.getElementById('btnarriba').style.display="none";
             document.getElementById('btnabajo').style.display="none";
@@ -149,8 +162,7 @@ function compararValor(valor){
         console.log(valor);
         console.log(ganadores);
         console.log(fase);
-        turno++;
-        asignarTextoElemento('p',`jugador ${jugadores[turno]} elije una opcion`)
+        
 
     }
 
@@ -225,6 +237,7 @@ function buscaValor(array,valorBuscado){
     return array.includes(valorBuscado);
 }
 
+/*
 function continuar(){
     if(fase==2){
         eleccion.loop=true;
